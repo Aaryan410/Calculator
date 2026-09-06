@@ -1,17 +1,27 @@
-a = int(input("What is a? "))
-b = int(input("What is b? "))
+operation = input("Operation: ")
 
-sign = input("What operation? ")
 
-if sign == '+':
-    addition = a + b
+if "+" in operation:
+    operation_left, operation_right = operation.split("+")
+    addition = int(operation_left) + int(operation_right)
     print(addition)
-elif sign == '-':
-    substraction = a - b
-    print(substraction)
-elif sign == '*':
-    multiplication = a * b
+
+elif "-" in operation:
+    operation_left, operation_right = operation.split("-")
+    subtraction = int(operation_left) - int(operation_right)
+    print(subtraction)
+
+elif "x" in operation or "*" in operation:
+
+    if 'x' in operation:
+        operation_left, operation_right = operation.split("x")
+    else:
+        operation_left, operation_right = operation.split("*")
+
+    multiplication = int(operation_left) * int(operation_right)
     print(multiplication)
-elif sign == '/':
-    division = a / b
+
+elif "/" in operation:
+    operation_left, operation_right = operation.split("/")
+    division = int(operation_left) / int(operation_right)
     print(division)
